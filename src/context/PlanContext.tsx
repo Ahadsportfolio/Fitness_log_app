@@ -4,7 +4,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { PlanItem, SavedItem, Workout } from "@/types/workout";
 import { toast } from "sonner";
 
-interface PlanContextType {
+export interface PlanContextType {
   todayPlan: PlanItem[];
   savedList: SavedItem[];
   addToPlan: (workout: Workout) => boolean;
