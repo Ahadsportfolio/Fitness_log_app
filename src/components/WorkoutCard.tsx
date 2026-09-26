@@ -39,7 +39,7 @@ export const WorkoutCard: React.FC<WorkoutCardProps> = ({ workout }) => {
         <div className="p-5">
           {/* Category Tag Pills */}
           <div className="flex flex-wrap gap-1.5 mb-3">
-            {workout.muscleGroups.map((group, idx) => (
+            {workout.muscleGroups.map((group: string, idx: number) => (
               <span
                 key={idx}
                 className="bg-[#ccff00] text-black font-extrabold text-[10px] tracking-wider px-2.5 py-0.5 rounded-full uppercase"
@@ -62,7 +62,7 @@ export const WorkoutCard: React.FC<WorkoutCardProps> = ({ workout }) => {
       </div>
 
       {/* Stats Row with icons */}
-      <div className="px-5 pb-5 pt-0 border-t border-[#1e222d]/60 pt-3 flex items-center justify-between text-xs text-zinc-400 font-medium">
+      <div className="px-5 pb-5 border-t border-[#1e222d]/60 pt-3 flex items-center justify-between text-xs text-zinc-400 font-medium">
         <div className="flex items-center gap-1.5">
           <Clock className="w-3.5 h-3.5 text-zinc-400" />
           <span>{workout.duration} min</span>
