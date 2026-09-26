@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { usePlan, PlanItem } from "@/context/PlanContext";
-import { Workout, SortOption } from "@/types/workout";
+import { usePlan } from "@/context/PlanContext";
+import { Workout, SortOption, PlanItem } from "@/types/workout";
 import { StatSummaryCard } from "@/components/StatSummaryCard";
 import { PlannedCard } from "@/components/PlannedCard";
 import { SortDropdown } from "@/components/SortDropdown";
