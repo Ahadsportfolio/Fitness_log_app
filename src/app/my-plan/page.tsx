@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePlan } from "@/context/PlanContext";
-import { Workout, SortOption, PlanItem } from "@/types/workout";
+import { SortOption } from "@/types/workout";
 import { StatSummaryCard } from "@/components/StatSummaryCard";
 import { PlannedCard } from "@/components/PlannedCard";
 import { SortDropdown } from "@/components/SortDropdown";
@@ -23,14 +23,14 @@ export default function MyPlanPage() {
     toggleDone,
   } = usePlan();
 
-  // Pick target list based on active tab with explicit type mapping
-  const rawList: Workout[] =
+  // Pick target list based on active tab
+  const rawList =
     activeTab === "today"
-      ? todayPlan.map((item: PlanItem) => item.workout)
-      : savedList.map((item: PlanItem) => item.workout);
+      ? todayPlan.map((item) => item.workout)
+      : savedList.map((item) => item.workout);
 
-  // Sort list with explicit types on comparator parameters
-  const sortedList = [...rawList].sort((a: Workout, b: Workout) => {
+  // Sort list
+  const sortedList = [...rawList].sort((a, b) => {
     if (sortBy === "duration") {
       return a.duration - b.duration;
     }
@@ -124,8 +124,8 @@ export default function MyPlanPage() {
       ) : (
         /* List of Workout Cards */
         <div className="space-y-4">
-          {sortedList.map((workout: Workout) => {
-            const planItem = todayPlan.find((i: PlanItem) => i.workout.id === workout.id);
+          {sortedList.map((workout) => {
+            const planItem = todayPlan.find((i) => i.workout.id === workout.id);
             const isDone = planItem?.isDone || false;
 
             return (

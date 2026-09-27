@@ -127,7 +127,7 @@ export default function WorkoutDetailPage({
 
           {/* Category Tag Pills */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {workout.muscleGroups.map((group: string, idx: number) => (
+            {workout.muscleGroups.map((group, idx) => (
               <span
                 key={idx}
                 className="bg-[#ccff00] text-black font-extrabold text-xs tracking-wider px-3 py-1 rounded-full uppercase"
@@ -140,7 +140,7 @@ export default function WorkoutDetailPage({
           {/* Key Specs Table / Panel */}
           <div className="w-full bg-[#13161c] border border-[#1e222d] rounded-2xl p-5 mb-8 shadow-md">
             <div className="divide-y divide-[#1e222d]/70">
-              {keySpecs.map((spec: { label: string; value: string | number }, index: number) => (
+              {keySpecs.map((spec, index) => (
                 <div
                   key={index}
                   className="py-3 first:pt-0 last:pb-0 flex items-center justify-between text-xs sm:text-sm font-medium"
@@ -162,7 +162,7 @@ export default function WorkoutDetailPage({
               INSTRUCTIONS
             </h3>
             <ol className="space-y-3">
-              {workout.instructions.map((step: string, idx: number) => (
+              {workout.instructions.map((step, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300 font-normal leading-relaxed"
